@@ -28,7 +28,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    //This enable you to call viewmodel with hilt also but outside composable function
     private val viewModel:WeatherViewModel by viewModels()
+    //This can't be done outside here only you can use this in composable function
+    ///val viewModel = hiltViewModel<WeatherViewModel>()
     private lateinit var permissions:ActivityResultLauncher<Array<String>>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
